@@ -1,18 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-    console.log("ready to roll")
-    renderCanvas();
-})
+let startButton = document.createElement("button");
+startButton.innerText = "START!";
 
-function renderCanvas(){
-    const canvas = document.createElement("canvas");
-    appendToBody(canvas);
+let stopButton = document.createElement("button");
+stopButton.innerText = "STOP!";
+
+let root = document.getElementById("root");
+root.appendChild(stopButton);
+root.appendChild(startButton);
+
+startButton.onclick = function() {
+    startGame();
 }
 
-function appendToBody(element){
-    const body = getEl("app");
-    body.appendChild(element);
-}
-
-function getEl(name){
-    return document.getElementById(name);
+stopButton.onclick = function() {
+    stopGame();
 }
