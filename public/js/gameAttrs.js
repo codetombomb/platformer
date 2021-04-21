@@ -1,7 +1,8 @@
 let direction = 0;
 let frames = [0, 256, 512, 768];
 let walking = false;
-let walk = 0;
+let walk = 512;
+
 
 let canvasAttrs = {
     width: 500,

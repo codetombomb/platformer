@@ -5,4 +5,9 @@ playerImg.onload = function (){
 };
 playerImg.src = "../assets/character.png";
 
-
+let bgLoaded = false;
+let bgImg = new Image();
+bgImg.onload = function (){
+    bgLoaded = true;
+}
+bgImg.src = "../assets/black-snakes-lg.jpeg"

@@ -9,9 +9,11 @@ const update = () => {
     animationStopId = window.requestAnimationFrame(update);
     render();
     movePlayer(0.02);
+    walkPlayer();
 }
-// 256
-const render = () => {
+
+const render = () => {  
+    ctx.drawImage(bgImg, 0, 0)
     ctx.drawImage(playerImg, walk, direction, 256, 256, 10, 300, 100, 100);
 }
 
@@ -24,3 +26,13 @@ const stopGame = () => {
 const restart = () => {
 
 }
+
+const walkPlayer = () => {
+    let stopId;
+    if (walking) {
+        stopId = setInterval(incrementFrame(), 1000)
+    } else {
+        clearInterval(stopId)
+    }
+}
+
